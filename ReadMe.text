@@ -1,0 +1,3 @@
+The project is to use scrapy/xpath to scrape the Hindu website
+There are two spiders here, One collects all the links that contain the description of the news (hindu spider)
+the other spider collects the actual desreption of the news (hindu desc spider)
