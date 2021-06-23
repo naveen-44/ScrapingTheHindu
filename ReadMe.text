@@ -1,5 +1,8 @@
-The project is to use scrapy/xpath to scrape the Hindu website
+The project is to use scrapy/xpath to scrape The Hindu website
+For now, the spiders collect national news alone
+
 There are two spiders here, One collects all the links that contain the description of the news (hindu spider)
-the other spider collects the actual desreption of the news (hindu desc spider)
+The other spider collects the actual desreption of the news (hindu desc spider)
+
 The links are saved in page_links.csv
 The heading and description of the news are saved in descriptions.csv
