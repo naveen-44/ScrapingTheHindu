@@ -7,7 +7,9 @@ import scrapy
 
 
 class HinduItem(scrapy.Item):
+    place = scrapy.Field()
+    time_stamp = scrapy.Field()
     heading = scrapy.Field()
-    page_link = scrapy.Field()
     news_description = scrapy.Field()
+    page_link = scrapy.Field()
 

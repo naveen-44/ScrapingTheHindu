@@ -9,9 +9,10 @@ class HinduDescSpider(scrapy.Spider):
         data = list(csv.reader(csvfile))
 
     start_urls = []
-    for i,row in enumerate(data):
-        if i > 0:
+    for i, row in enumerate(data):
+        if i > 1:
             start_urls.append(row[2])
+    print(start_urls[:5])
 
     def parse(self, response):
 
@@ -30,8 +31,15 @@ class HinduDescSpider(scrapy.Spider):
             if para[-1] == '.':
                 para += ' '
 
+        place = response.css('.ksl-time-stamp:nth-child(1)::text').extract()[0].replace("\n", "")
+        place = place.replace(",", "")
+
+        time_stamp = response.css('.ksl-time-stamp none ::text').extract()[0].replace("\n", "")
+
         items['news_description'] = para
         items['heading'] = title
         items['page_link'] = link
+        items['place'] = place
+        items['time_stamp'] = time_stamp
 
         yield items
