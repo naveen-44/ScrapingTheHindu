@@ -23,7 +23,7 @@ class HinduSpider(scrapy.Spider):
         next_page = curr_page + str(HinduSpider.page_number) + '/'
 
         # trying to stop the spider when it reaches 20 pages
-        if HinduSpider.page_number < 10:
+        if HinduSpider.page_number < 20:
             HinduSpider.page_number += 1
 
             yield response.follow(
